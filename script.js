@@ -90,8 +90,7 @@ if (qrScanner) {
 
         document.getElementById("reader").style.display = "none";
 
-        startCameraBtn.innerHTML = "📷 Start Camera";
-
+        startCameraBtn.textContent = "📷 Start Camera";
     });
 
     return;
@@ -103,8 +102,6 @@ if (qrScanner) {
     qrScanner = new Html5Qrcode("reader");
 
 Html5Qrcode.getCameras().then(function(cameras){
-
-    qrScanner = new Html5Qrcode("reader");
 
         console.log(cameras);
 
@@ -150,10 +147,8 @@ Html5Qrcode.getCameras().then(function(cameras){
     .then(function(){
 
         console.log("Camera started successfully.");
-
-        startCameraBtn.innerHTML = "📷 Camera Running";
         
-        startCameraBtn.innerHTML = "🛑 Stop Camera";
+        startCameraBtn.textContent = "🛑 Stop Camera";
 
     })
 
