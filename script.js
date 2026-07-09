@@ -10,13 +10,29 @@ let qrScanner = null;
 // =========================
 // Search Student
 // =========================
+const API =
+"https://script.google.com/macros/s/AKfycby9seIKNWXwU4guOG6VM6AIK9SJmIIrub5dYXyCIxL8F5xCEG0A5nzyj6Bq7zOqqQOu2Q/exec";
+
 function searchStudent(studentID){
 
     studentID = studentID.trim();
 
     if(studentID === "") return;
 
-    alert("Scanned Student ID: " + studentID);
+    fetch(API + "?action=student&id=" + encodeURIComponent(studentID))
+    .then(response => response.json())
+    .then(student => {
+
+        showStudent(student);
+
+    })
+    .catch(err => {
+
+        console.error(err);
+
+        alert("Unable to connect to Google Sheets.");
+
+    });
 
 }
 
@@ -439,14 +455,18 @@ Continue
 
 successBeep();
 
-/*
-google.script.run
-.withSuccessHandler(function(response){
+fetch(
+    API +
+    "?action=log" +
+    "&studentID=" + encodeURIComponent(student.studentID) +
+    "&name=" + encodeURIComponent(student.name)
+)
+.then(r => r.json())
+.then(response => {
 
     console.log(response.message);
 
 })
-.logAttendance(student);
-*/
+.catch(console.error);
 
 }
