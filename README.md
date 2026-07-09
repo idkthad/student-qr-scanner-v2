@@ -1,0 +1,1 @@
+# Student QR Scanner System
