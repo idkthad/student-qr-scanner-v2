@@ -205,93 +205,12 @@ function errorBeep() {
 
 function resetScanner(){
 
-result.innerHTML = `
-<div style="
-    background:#ffffff;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.15);
-">
-
-<div style="
-    display:flex;
-    align-items:center;
-    gap:25px;
-">
-
-    <img
-        src="https://drive.google.com/thumbnail?id=${student.photo.match(/\/d\/(.*?)\//)[1]}&sz=w1000"
-        style="
-            width:170px;
-            height:170px;
-            object-fit:cover;
-            border-radius:12px;
-            border:4px solid #1f4e79;
-        ">
-
-    <div style="flex:1;">
-
-        <div style="
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        ">
-
-            <h2 style="margin:0;color:#1f4e79;">
-                ${student.name}
-            </h2>
-
-            <span style="
-                background:#28a745;
-                color:white;
-                padding:8px 18px;
-                border-radius:20px;
-                font-weight:bold;
-            ">
-                ACTIVE
-            </span>
-
+    result.innerHTML = `
+        <div class="waiting">
+            <h2>📷 Ready for Next Student</h2>
+            <p>Waiting for QR Scan...</p>
         </div>
-
-        <hr>
-
-        <p><strong>Student ID:</strong> ${student.studentID}</p>
-
-        <p><strong>Course:</strong> ${student.course}</p>
-
-        <p><strong>Year:</strong> ${student.year}</p>
-
-        <p><strong>Section:</strong> ${student.section}</p>
-
-        <p><strong>Scan Time:</strong> ${new Date().toLocaleTimeString()}</p>
-
-    </div>
-
-</div>
-
-<div style="text-align:center;margin-top:25px;">
-
-<button
-onclick="resetScanner()"
-style="
-background:#28a745;
-color:white;
-border:none;
-padding:14px 40px;
-font-size:18px;
-font-weight:bold;
-border-radius:10px;
-cursor:pointer;
-">
-
-✅ Done
-
-</button>
-
-</div>
-
-</div>
-`;
+    `;
 
     scanner.value = "";
 
@@ -351,9 +270,9 @@ color:white;
 border:none;
 padding:12px 30px;
 font-size:18px;
+font-weight:bold;
 border-radius:8px;
 cursor:pointer;
-font-weight:bold;
 ">
 
 Continue
