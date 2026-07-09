@@ -151,7 +151,9 @@ Html5Qrcode.getCameras().then(function(cameras){
 
         console.log("Camera started successfully.");
 
-startCameraBtn.innerHTML = "🛑 Stop Camera";
+        startCameraBtn.innerHTML = "📷 Camera Running";
+        
+        startCameraBtn.innerHTML = "🛑 Stop Camera";
 
     })
 
