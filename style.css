@@ -111,14 +111,17 @@ h1{
 .logos{
 
     display:flex;
-
     justify-content:center;
+    margin-bottom:15px;
 
-    align-items:center;
+}
 
-    gap:18px;
+.school-logo{
 
-    margin-bottom:12px;
+    width:110px !important;
+    height:110px !important;
+
+    object-fit:contain;
 
 }
 
