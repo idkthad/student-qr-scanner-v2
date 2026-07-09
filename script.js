@@ -80,13 +80,23 @@ startCameraBtn.addEventListener("click", function(){
 
     console.log("Start Camera button clicked");
 
-    if(qrScanner){
+if (qrScanner) {
 
-        console.log("Camera already running.");
+    qrScanner.stop().then(function () {
 
-        return;
+        qrScanner.clear();
 
-    }
+        qrScanner = null;
+
+        document.getElementById("reader").style.display = "none";
+
+        startCameraBtn.innerHTML = "📷 Start Camera";
+
+    });
+
+    return;
+
+}
 
     document.getElementById("reader").style.display = "block";
 
@@ -141,9 +151,7 @@ Html5Qrcode.getCameras().then(function(cameras){
 
         console.log("Camera started successfully.");
 
-        startCameraBtn.disabled = true;
-
-        startCameraBtn.innerHTML = "📷 Camera Running";
+startCameraBtn.innerHTML = "🛑 Stop Camera";
 
     })
 
