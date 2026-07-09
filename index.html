@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+
+<meta charset="UTF-8">
+
+<title>Student QR Scanner System</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://unpkg.com/html5-qrcode"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student QR Scanner System</h1>
+
+<button id="startCamera">
+    📷 Start Camera
+</button>
+
+<div id="reader"></div>
+
+<input
+    id="scanner"
+    type="text"
+    placeholder="Scan or Enter Student ID"
+    autocomplete="off">
+        
+    <div id="result">
+
+        <div class="waiting">
+
+            Waiting for QR Scan...
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
