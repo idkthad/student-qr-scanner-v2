@@ -61,6 +61,12 @@ fetch(
 
 }
 
+const today = new Date().toISOString().split("T")[0];
+
+document.getElementById("fromDate").value = today;
+document.getElementById("toDate").value = today;
+
+// Load immediately
 loadDashboard();
 
 setInterval(loadDashboard,5000);
@@ -89,3 +95,7 @@ setInterval(updateClock,1000);
 document
 .getElementById("searchBox")
 .addEventListener("keyup", loadDashboard);
+
+document
+.getElementById("filterBtn")
+.addEventListener("click", loadDashboard);
