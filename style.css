@@ -466,3 +466,55 @@ tbody tr:hover{
     box-shadow:0 0 12px rgba(31,78,121,.25);
 
 }
+
+/* ==========================
+   Filters
+========================== */
+
+.filters{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+.filters input[type="date"]{
+
+    padding:10px;
+
+    border:2px solid #1f4e79;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+}
+
+#filterBtn{
+
+    padding:10px 18px;
+
+    background:#1f4e79;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+}
+
+#filterBtn:hover{
+
+    background:#15395d;
+
+}
