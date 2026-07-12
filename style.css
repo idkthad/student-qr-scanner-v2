@@ -334,3 +334,59 @@ h1{
     background:#dc3545;
 
 }
+
+/* =========================
+   LOG TABLE
+========================= */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+thead{
+
+    background:#1f4e79;
+
+    color:white;
+
+}
+
+th{
+
+    padding:16px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+tbody tr:nth-child(even){
+
+    background:#f8f9fb;
+
+}
+
+tbody tr:hover{
+
+    background:#eef6ff;
+
+}
