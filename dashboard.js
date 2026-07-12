@@ -42,6 +42,21 @@ fetch(
 
         });
 
+    if(filteredLogs.length === 0){
+
+    tbody.innerHTML = `
+        <tr>
+            <td colspan="4" class="noLogs">
+                📋<br><br>
+                <strong>No Logs Found</strong><br>
+                There are no attendance records for the selected date.
+            </td>
+        </tr>
+    `;
+
+    return;
+
+}
         filteredLogs.forEach(function(log){
 
             tbody.innerHTML += `
