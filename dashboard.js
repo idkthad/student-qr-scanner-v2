@@ -40,4 +40,8 @@ function loadDashboard(){
 
 }
 
+// Load immediately
 loadDashboard();
+
+// Refresh every 5 seconds
+setInterval(loadDashboard, 5000);
