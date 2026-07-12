@@ -1,41 +1,52 @@
 const API =
 "https://script.google.com/macros/s/AKfycby9seIKNWXwU4guOG6VM6AIK9SJmIIrub5dYXyCIxL8F5xCEG0A5nzyj6Bq7zOqqQOu2Q/exec";
 
-const tbody = document.querySelector("#logsTable tbody");
+function loadDashboard(){
 
-const search =
-    document.getElementById("searchBox")
-    .value
-    .toLowerCase();
+    fetch(API + "?action=dashboard")
 
-tbody.innerHTML = "";
+    .then(response => response.json())
 
-// Latest 20 logs
-data.logs = data.logs.slice(0,20);
+    .then(data => {
 
-// Filter logs
-const filteredLogs = data.logs.filter(function(log){
+        document.getElementById("entries").innerText = data.entries;
+        document.getElementById("exits").innerText = data.exits;
+        document.getElementById("inside").innerText = data.inside;
+        document.getElementById("inactive").innerText = data.inactive;
 
-    return (
-        log.studentID.toLowerCase().includes(search) ||
-        log.name.toLowerCase().includes(search)
-    );
+        const tbody = document.querySelector("#logsTable tbody");
 
-});
+        const search = document
+            .getElementById("searchBox")
+            .value
+            .toLowerCase();
 
-// Display logs
-filteredLogs.forEach(function(log){
+        tbody.innerHTML = "";
 
-    tbody.innerHTML += `
-        <tr>
-            <td>${log.time}</td>
-            <td>${log.studentID}</td>
-            <td>${log.name}</td>
-            <td>${log.action}</td>
-        </tr>
-    `;
+        // Latest 20 logs
+        data.logs = data.logs.slice(0,20);
 
-});
+        const filteredLogs = data.logs.filter(function(log){
+
+            return (
+                log.studentID.toLowerCase().includes(search) ||
+                log.name.toLowerCase().includes(search)
+            );
+
+        });
+
+        filteredLogs.forEach(function(log){
+
+            tbody.innerHTML += `
+                <tr>
+                    <td>${log.time}</td>
+                    <td>${log.studentID}</td>
+                    <td>${log.name}</td>
+                    <td>${log.action}</td>
+                </tr>
+            `;
+
+        });
 
     })
 
@@ -43,11 +54,9 @@ filteredLogs.forEach(function(log){
 
 }
 
-// Load immediately
 loadDashboard();
 
-// Refresh every 5 seconds
-setInterval(loadDashboard, 5000);
+setInterval(loadDashboard,5000);
 
 function updateClock(){
 
