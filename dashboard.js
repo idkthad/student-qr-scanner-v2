@@ -47,3 +47,24 @@ loadDashboard();
 
 // Refresh every 5 seconds
 setInterval(loadDashboard, 5000);
+
+function updateClock(){
+
+    const now = new Date();
+
+    document.getElementById("currentDate").innerHTML =
+        now.toLocaleDateString(undefined,{
+            weekday:"long",
+            year:"numeric",
+            month:"long",
+            day:"numeric"
+        });
+
+    document.getElementById("currentTime").innerHTML =
+        now.toLocaleTimeString();
+
+}
+
+updateClock();
+
+setInterval(updateClock,1000);
