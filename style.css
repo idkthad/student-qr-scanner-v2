@@ -519,24 +519,46 @@ tbody tr:hover{
 
 }
 
-.noLogs{
+/* ==========================
+   Empty State
+========================== */
+
+.empty-state{
+
+    padding:60px 20px;
 
     text-align:center;
 
-    padding:60px;
+}
 
-    color:#777;
+.empty-icon{
 
-    font-size:18px;
+    font-size:70px;
 
-    line-height:1.8;
+    margin-bottom:15px;
 
 }
 
-.noLogs strong{
+.empty-state h2{
 
     color:#1f4e79;
 
-    font-size:22px;
+    margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+    color:#666;
+
+    font-size:17px;
+
+    margin-bottom:10px;
+
+}
+
+.empty-state small{
+
+    color:#999;
 
 }
