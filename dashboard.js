@@ -22,7 +22,9 @@ function loadDashboard(){
         tbody.innerHTML = "";
 
         data.logs.forEach(function(log){
-
+            
+            data.logs = data.logs.slice(0, 20);
+            
             tbody.innerHTML += `
                 <tr>
                     <td>${log.time}</td>
