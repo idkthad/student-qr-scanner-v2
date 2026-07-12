@@ -3,8 +3,15 @@ const API =
 
 function loadDashboard(){
 
-    fetch(API + "?action=dashboard")
+const fromDate = document.getElementById("fromDate").value;
+const toDate = document.getElementById("toDate").value;
 
+fetch(
+    API +
+    "?action=dashboard" +
+    "&fromDate=" + encodeURIComponent(fromDate) +
+    "&toDate=" + encodeURIComponent(toDate)
+)
     .then(response => response.json())
 
     .then(data => {
