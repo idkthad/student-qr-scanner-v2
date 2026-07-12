@@ -518,3 +518,25 @@ tbody tr:hover{
     background:#15395d;
 
 }
+
+.noLogs{
+
+    text-align:center;
+
+    padding:60px;
+
+    color:#777;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.noLogs strong{
+
+    color:#1f4e79;
+
+    font-size:22px;
+
+}
