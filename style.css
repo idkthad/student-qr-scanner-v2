@@ -562,3 +562,65 @@ tbody tr:hover{
     color:#999;
 
 }
+
+/* ==========================
+   Export Toolbar
+========================== */
+
+.export-tools{
+
+    display:flex;
+
+    gap:12px;
+
+    justify-content:flex-end;
+
+    margin:20px 0;
+
+}
+
+.export-tools button{
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+#exportExcel{
+
+    background:#1D6F42;
+
+    color:white;
+
+}
+
+#exportExcel:hover{
+
+    background:#155832;
+
+}
+
+#exportPDF{
+
+    background:#C62828;
+
+    color:white;
+
+}
+
+#exportPDF:hover{
+
+    background:#9E1E1E;
+
+}
