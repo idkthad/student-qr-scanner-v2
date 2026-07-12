@@ -17,15 +17,16 @@ function loadDashboard(){
 
         document.getElementById("inactive").innerText = data.inactive;
 
-        const tbody = document.querySelector("#logsTable tbody");
+const tbody = document.querySelector("#logsTable tbody");
 
-        tbody.innerHTML = "";
+tbody.innerHTML = "";
 
-        data.logs.forEach(function(log){
-            
-            data.logs = data.logs.slice(0, 20);
-            
-            tbody.innerHTML += `
+// Only show latest 20 logs
+data.logs = data.logs.slice(0,20);
+
+data.logs.forEach(function(log){
+
+    tbody.innerHTML += `
                 <tr>
                     <td>${log.time}</td>
                     <td>${log.studentID}</td>
