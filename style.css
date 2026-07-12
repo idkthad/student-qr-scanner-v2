@@ -169,3 +169,43 @@ h1{
 *{
     box-sizing:border-box;
 }
+
+.dashboard-buttons{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.dashboard-buttons button{
+
+    background:#1f4e79;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.dashboard-buttons button:hover{
+
+    background:#15395d;
+
+    transform:translateY(-2px);
+
+}
