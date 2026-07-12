@@ -209,3 +209,48 @@ h1{
     transform:translateY(-2px);
 
 }
+
+
+/* =========================
+   Top Buttons
+========================= */
+
+.top-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.top-buttons button{
+
+    background:#1f4e79;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.top-buttons button:hover{
+
+    background:#15395d;
+
+    transform:translateY(-2px);
+
+}
