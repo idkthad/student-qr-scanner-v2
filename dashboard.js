@@ -42,14 +42,36 @@ fetch(
 
         });
 
-    if(filteredLogs.length === 0){
+if(filteredLogs.length === 0){
+
+    const from =
+        document.getElementById("fromDate").value;
+
+    const to =
+        document.getElementById("toDate").value;
 
     tbody.innerHTML = `
         <tr>
-            <td colspan="4" class="noLogs">
-                📋<br><br>
-                <strong>No Logs Found</strong><br>
-                There are no attendance records for the selected date.
+            <td colspan="4">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">📋</div>
+
+                    <h2>No Logs Found</h2>
+
+                    <p>
+                        No attendance records were found
+                        from <strong>${from}</strong>
+                        to <strong>${to}</strong>.
+                    </p>
+
+                    <small>
+                        Try selecting another date range.
+                    </small>
+
+                </div>
+
             </td>
         </tr>
     `;
@@ -57,6 +79,7 @@ fetch(
     return;
 
 }
+        
         filteredLogs.forEach(function(log){
 
             tbody.innerHTML += `
