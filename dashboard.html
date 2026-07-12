@@ -85,12 +85,29 @@
 
     <h2>Today's Logs</h2>
 
-    <input
-        type="text"
-        id="searchBox"
-        placeholder="🔍 Search Student ID or Name">
+    <div class="filters">
+
+        <input
+            type="date"
+            id="fromDate">
+
+        <input
+            type="date"
+            id="toDate">
+
+        <button id="filterBtn">
+            📅 Filter
+        </button>
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="🔍 Search Student ID or Name">
+
+    </div>
 
 </div>
+    
     <table id="logsTable">
 
         <thead>
