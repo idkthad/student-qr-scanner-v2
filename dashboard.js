@@ -153,3 +153,31 @@ document
     alert("Generate PDF clicked!");
 
 });
+
+const reportModal = document.getElementById("reportModal");
+
+document
+.getElementById("exportExcel")
+.addEventListener("click", function(){
+
+    reportModal.style.display = "block";
+
+});
+
+document
+.querySelector(".close")
+.addEventListener("click", function(){
+
+    reportModal.style.display = "none";
+
+});
+
+window.addEventListener("click", function(e){
+
+    if(e.target === reportModal){
+
+        reportModal.style.display = "none";
+
+    }
+
+});
