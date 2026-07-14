@@ -23,6 +23,10 @@ function loadAttendance(){
 
 function renderTable(){
 
+    document.getElementById("welcomeScreen").style.display = "none";
+
+    document.getElementById("attendanceTable").style.display = "table";
+
     const tbody = document.querySelector("#attendanceTable tbody");
 
     tbody.innerHTML = "";
@@ -139,8 +143,6 @@ document
 
     if(allRecords.length === 0){
 
-        loadAttendance();
-
     }else{
 
         renderTable();
@@ -168,3 +170,4 @@ document
     renderTable();
 
 });
+
