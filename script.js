@@ -78,9 +78,16 @@ scanner.addEventListener("keydown", function(event){
 // =========================
 // Start Camera
 // =========================
+
 document
 .getElementById("startCamera")
-.addEventListener(...)
+.addEventListener("click", function () {
+
+    console.log("Start Camera button clicked");
+
+    // ALL YOUR CAMERA CODE GOES HERE
+
+});
 
     console.log("Start Camera button clicked");
 
@@ -122,6 +129,9 @@ if (qrScanner) {
     return;
 
 }
+
+    document.getElementById("reader").style.display = "block";
+
     qrScanner = new Html5Qrcode("reader");
 
 Html5Qrcode.getCameras().then(function(cameras){
