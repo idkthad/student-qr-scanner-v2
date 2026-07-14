@@ -30,9 +30,6 @@ fetch(
 
         tbody.innerHTML = "";
 
-        // Latest 20 logs
-        data.logs = data.logs.slice(0,20);
-
         const filteredLogs = data.logs.filter(function(log){
 
             return (
