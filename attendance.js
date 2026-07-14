@@ -27,20 +27,83 @@ function renderTable(){
 
     tbody.innerHTML = "";
 
-    allRecords.forEach(function(record){
+    const from =
+        document.getElementById("fromDate").value;
 
-        tbody.innerHTML += `
-            <tr>
-                <td>${record.time}</td>
-                <td>${record.studentID}</td>
-                <td>${record.name}</td>
-                <td>${record.course}</td>
-                <td>${record.year}</td>
-                <td>${record.action}</td>
-            </tr>
-        `;
+    const to =
+        document.getElementById("toDate").value;
 
-    });
+    const course =
+        document.getElementById("course").value;
+
+    const year =
+        document.getElementById("year").value;
+
+    const action =
+        document.getElementById("action").value;
+
+    const keyword =
+        document
+        .getElementById("searchStudent")
+        .value
+        .toLowerCase();
+
+    const filtered = allRecords.filter(function(record){
+
+    const recordDate =
+        new Date(record.date)
+        .toISOString()
+        .split("T")[0];
+
+    const matchDate =
+        (!from || recordDate >= from) &&
+        (!to || recordDate <= to);
+
+    const matchCourse =
+        !course || record.course == course;
+
+    const matchYear =
+        !year || String(record.year) == year;
+
+    const matchAction =
+        !action || record.action == action;
+
+    const matchStudent =
+        !keyword ||
+        record.name.toLowerCase().includes(keyword) ||
+        record.studentID.toLowerCase().includes(keyword);
+
+    return (
+        matchDate &&
+        matchCourse &&
+        matchYear &&
+        matchAction &&
+        matchStudent
+    );
+
+});
+
+filtered.forEach(function(record){
+
+    tbody.innerHTML += `
+        <tr>
+
+            <td>${record.time}</td>
+
+            <td>${record.studentID}</td>
+
+            <td>${record.name}</td>
+
+            <td>${record.course}</td>
+
+            <td>${record.year}</td>
+
+            <td>${record.action}</td>
+
+        </tr>
+    `;
+
+});
 
 }
 
@@ -71,3 +134,27 @@ function loadCourses(){
 }
 
 loadCourses();
+
+document
+.getElementById("searchBtn")
+.addEventListener("click", renderTable);
+
+document
+.getElementById("resetBtn")
+.addEventListener("click", function(){
+
+    document.getElementById("fromDate").value = "";
+
+    document.getElementById("toDate").value = "";
+
+    document.getElementById("course").value = "";
+
+    document.getElementById("year").value = "";
+
+    document.getElementById("action").value = "";
+
+    document.getElementById("searchStudent").value = "";
+
+    renderTable();
+
+});
