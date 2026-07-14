@@ -42,6 +42,17 @@ fetch(
 
         });
 
+        const totalPages = Math.max(1, Math.ceil(filteredLogs.length / rowsPerPage));
+
+        if(currentPage > totalPages){
+
+        currentPage = totalPages;
+
+}
+
+document.getElementById("pageNumber").innerHTML =
+    "Page " + currentPage + " of " + totalPages;
+
 if(filteredLogs.length === 0){
 
     const from =
@@ -184,5 +195,25 @@ window.addEventListener("click", function(e){
         reportModal.style.display = "none";
 
     }
+
+});
+
+document.getElementById("nextPage").addEventListener("click", function(){
+
+    currentPage++;
+
+    loadDashboard();
+
+});
+
+document.getElementById("prevPage").addEventListener("click", function(){
+
+    if(currentPage > 1){
+
+        currentPage--;
+
+    }
+
+    loadDashboard();
 
 });
