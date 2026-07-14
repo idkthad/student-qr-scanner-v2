@@ -45,3 +45,29 @@ function renderTable(){
 }
 
 loadAttendance();
+
+function loadCourses(){
+
+    fetch(API + "?action=courses")
+
+    .then(response => response.json())
+
+    .then(courses => {
+
+        const select =
+            document.getElementById("course");
+
+        courses.forEach(function(course){
+
+            select.innerHTML +=
+                `<option value="${course}">
+                    ${course}
+                </option>`;
+
+        });
+
+    });
+
+}
+
+loadCourses();
