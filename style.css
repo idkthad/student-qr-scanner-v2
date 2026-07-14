@@ -797,3 +797,77 @@ tbody tr:hover{
     font-size:16px;
 
 }
+
+/* ===========================
+   Attendance Welcome Screen
+=========================== */
+
+.welcome-screen{
+
+    text-align:center;
+
+    padding:80px 30px;
+
+    animation:fadeIn .4s;
+
+}
+
+.welcome-logo{
+
+    width:170px;
+
+    opacity:.18;
+
+    margin-bottom:20px;
+
+}
+
+.welcome-screen h2{
+
+    color:#1f4e79;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.welcome-screen p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+.welcome-tip{
+
+    margin-top:25px;
+
+    font-weight:bold;
+
+    color:#1f4e79;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
