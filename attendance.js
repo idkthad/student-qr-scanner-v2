@@ -107,8 +107,6 @@ filtered.forEach(function(record){
 
 }
 
-loadAttendance();
-
 function loadCourses(){
 
     fetch(API + "?action=courses")
@@ -137,7 +135,19 @@ loadCourses();
 
 document
 .getElementById("searchBtn")
-.addEventListener("click", renderTable);
+.addEventListener("click", function(){
+
+    if(allRecords.length === 0){
+
+        loadAttendance();
+
+    }else{
+
+        renderTable();
+
+    }
+
+});
 
 document
 .getElementById("resetBtn")
