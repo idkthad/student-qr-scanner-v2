@@ -157,6 +157,7 @@ document
 .getElementById("resetBtn")
 .addEventListener("click", function(){
 
+    // Clear filters
     document.getElementById("fromDate").value = "";
 
     document.getElementById("toDate").value = "";
@@ -169,7 +170,17 @@ document
 
     document.getElementById("searchStudent").value = "";
 
-    renderTable();
+    // Hide the table
+    document.getElementById("attendanceTable").style.display = "none";
+
+    // Show the welcome screen
+    document.getElementById("welcomeScreen").style.display = "block";
+
+    // Clear table rows
+    document.querySelector("#attendanceTable tbody").innerHTML = "";
+
+    // Optional: Clear cached records so the next Search reloads fresh data
+    allRecords = [];
 
 });
 
