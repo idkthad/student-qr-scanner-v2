@@ -189,8 +189,6 @@ document
 
     // Hide the table
     document.getElementById("attendanceTable").style.display = "none";
-    
-    document.getElementById("summaryCards").style.display = "none";
 
     // Show the welcome screen
     document.getElementById("welcomeScreen").style.display = "block";
@@ -202,4 +200,3 @@ document
     allRecords = [];
 
 });
-
