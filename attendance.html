@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Attendance Records</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📅 Attendance Records</h1>
+
+    <div class="filters-card">
+
+        <div class="filter-grid">
+
+            <div>
+
+                <label>From</label>
+
+                <input type="date" id="fromDate">
+
+            </div>
+
+            <div>
+
+                <label>To</label>
+
+                <input type="date" id="toDate">
+
+            </div>
+
+            <div>
+
+                <label>Course</label>
+
+                <select id="course">
+
+                    <option value="">All Courses</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Year</label>
+
+                <select id="year">
+
+                    <option value="">All Years</option>
+
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Action</label>
+
+                <select id="action">
+
+                    <option value="">All</option>
+
+                    <option>TIME IN</option>
+
+                    <option>TIME OUT</option>
+
+                </select>
+
+            </div>
+
+            <div>
+
+                <label>Student</label>
+
+                <input
+                    id="searchStudent"
+                    placeholder="Search Student">
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <button id="searchBtn">
+
+            🔍 Search Records
+
+        </button>
+
+        <button id="resetBtn">
+
+            Reset
+
+        </button>
+
+    </div>
+
+    <br>
+
+    <table id="attendanceTable">
+
+        <thead>
+
+            <tr>
+
+                <th>Time</th>
+
+                <th>Student ID</th>
+
+                <th>Name</th>
+
+                <th>Course</th>
+
+                <th>Year</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script src="attendance.js"></script>
+
+</body>
+
+</html>
