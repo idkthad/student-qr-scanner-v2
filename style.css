@@ -763,3 +763,37 @@ tbody tr:hover{
     color:#1f4e79;
 
 }
+
+.empty-state{
+
+    text-align:center;
+
+    padding:70px;
+
+    color:#777;
+
+}
+
+.empty-logo{
+
+    width:140px;
+
+    opacity:.18;
+
+    margin-bottom:20px;
+
+}
+
+.empty-state h2{
+
+    color:#1f4e79;
+
+    margin-bottom:10px;
+
+}
+
+.empty-state p{
+
+    font-size:16px;
+
+}
