@@ -203,3 +203,15 @@ document.getElementById("prevPage").addEventListener("click", function(){
     loadDashboard();
 
 });
+
+document
+.getElementById("openScanner")
+.addEventListener("click", function(){
+
+    window.open(
+        "index.html",
+        "ScannerWindow",
+        "width=1100,height=900"
+    );
+
+});
