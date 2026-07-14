@@ -1,6 +1,9 @@
 const API =
 "https://script.google.com/macros/s/AKfycby9seIKNWXwU4guOG6VM6AIK9SJmIIrub5dYXyCIxL8F5xCEG0A5nzyj6Bq7zOqqQOu2Q/exec";
 
+let currentPage = 1;
+const rowsPerPage = 50;
+
 function loadDashboard(){
 
 const fromDate = document.getElementById("fromDate").value;
@@ -77,18 +80,23 @@ if(filteredLogs.length === 0){
 
 }
         
-        filteredLogs.forEach(function(log){
+const start = (currentPage - 1) * rowsPerPage;
+const end = start + rowsPerPage;
 
-            tbody.innerHTML += `
-                <tr>
-                    <td>${log.time}</td>
-                    <td>${log.studentID}</td>
-                    <td>${log.name}</td>
-                    <td>${log.action}</td>
-                </tr>
-            `;
+const pageLogs = filteredLogs.slice(start, end);
 
-        });
+pageLogs.forEach(function(log){
+
+    tbody.innerHTML += `
+        <tr>
+            <td>${log.time}</td>
+            <td>${log.studentID}</td>
+            <td>${log.name}</td>
+            <td>${log.action}</td>
+        </tr>
+    `;
+
+});
 
     })
 
