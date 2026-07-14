@@ -13,6 +13,8 @@ let qrScanner = null;
 const API =
 "https://script.google.com/macros/s/AKfycby9seIKNWXwU4guOG6VM6AIK9SJmIIrub5dYXyCIxL8F5xCEG0A5nzyj6Bq7zOqqQOu2Q/exec";
 
+let studentWindow = null;
+
 function searchStudent(studentID){
 
     studentID = studentID.trim();
@@ -76,9 +78,22 @@ scanner.addEventListener("keydown", function(event){
 // =========================
 // Start Camera
 // =========================
-startCameraBtn.addEventListener("click", function(){
+document
+.getElementById("startCamera")
+.addEventListener(...)
 
     console.log("Start Camera button clicked");
+
+// Open the student display if it isn't already open
+if (!studentWindow || studentWindow.closed) {
+
+    studentWindow = window.open(
+        "student-display.html",
+        "StudentDisplay",
+        "width=900,height=850"
+    );
+
+}
 
 if (qrScanner) {
 
@@ -144,13 +159,23 @@ Html5Qrcode.getCameras().then(function(cameras){
 
     })
 
-    .then(function(){
+.then(function(){
 
-        console.log("Camera started successfully.");
-        
-        startCameraBtn.textContent = "🛑 Stop Camera";
+    console.log("Camera started successfully.");
 
-    })
+    startCameraBtn.textContent = "🛑 Stop Camera";
+
+    if(studentWindow){
+
+        studentWindow.postMessage({
+
+            type:"waiting"
+
+        },"*");
+
+    }
+
+})
 
     .catch(function(err){
 
