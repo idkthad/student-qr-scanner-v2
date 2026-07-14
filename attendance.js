@@ -87,6 +87,23 @@ function renderTable(){
 
 });
 
+document.getElementById("summaryCards").style.display = "grid";
+
+document.getElementById("totalRecords").innerHTML =
+    filtered.length;
+
+const uniqueStudents =
+    new Set(filtered.map(r=>r.studentID));
+
+document.getElementById("uniqueStudents").innerHTML =
+    uniqueStudents.size;
+
+document.getElementById("timeInCount").innerHTML =
+    filtered.filter(r=>r.action=="TIME IN").length;
+
+document.getElementById("timeOutCount").innerHTML =
+    filtered.filter(r=>r.action=="TIME OUT").length;
+
 filtered.forEach(function(record){
 
     tbody.innerHTML += `
@@ -172,6 +189,8 @@ document
 
     // Hide the table
     document.getElementById("attendanceTable").style.display = "none";
+    
+    document.getElementById("summaryCards").style.display = "none";
 
     // Show the welcome screen
     document.getElementById("welcomeScreen").style.display = "block";
