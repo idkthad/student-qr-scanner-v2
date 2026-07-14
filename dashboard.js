@@ -154,6 +154,7 @@ document
 .getElementById("filterBtn")
 .addEventListener("click", loadDashboard);
 
+/*
 const reportModal = document.getElementById("reportModal");
 
 document
@@ -181,6 +182,7 @@ window.addEventListener("click", function(e){
     }
 
 });
+*/
 
 document.getElementById("nextPage").addEventListener("click", function(){
 
