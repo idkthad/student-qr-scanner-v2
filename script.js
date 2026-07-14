@@ -106,14 +106,22 @@ if (qrScanner) {
         document.getElementById("reader").style.display = "none";
 
         startCameraBtn.textContent = "📷 Start Camera";
+
+        if(studentWindow){
+
+            studentWindow.postMessage({
+
+                type:"cameraOff"
+
+            },"*");
+
+        }
+
     });
 
     return;
 
 }
-
-    document.getElementById("reader").style.display = "block";
-
     qrScanner = new Html5Qrcode("reader");
 
 Html5Qrcode.getCameras().then(function(cameras){
