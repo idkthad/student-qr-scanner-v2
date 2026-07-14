@@ -154,22 +154,6 @@ document
 .getElementById("filterBtn")
 .addEventListener("click", loadDashboard);
 
-document
-.getElementById("generateExcel")
-.addEventListener("click", function(){
-
-    alert("Generate Excel clicked!");
-
-});
-
-document
-.getElementById("generatePDF")
-.addEventListener("click", function(){
-
-    alert("Generate PDF clicked!");
-
-});
-
 const reportModal = document.getElementById("reportModal");
 
 document
