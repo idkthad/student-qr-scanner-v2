@@ -143,6 +143,8 @@ document
 
     if(allRecords.length === 0){
 
+        loadAttendance();
+
     }else{
 
         renderTable();
