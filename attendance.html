@@ -15,102 +15,120 @@
 
 <div class="container">
 
+<!-- Header -->
+
+<div class="attendance-header">
+
     <h1>📅 Attendance Records</h1>
 
-    <div class="filters-card">
+    <p>
 
-        <div class="filter-grid">
+        Search, filter and review student attendance records.
 
-            <div>
+    </p>
 
-                <label>From</label>
+</div>
 
-                <input type="date" id="fromDate">
+<!-- Filter Card -->
 
-            </div>
+<div class="filter-card">
 
-            <div>
+    <div class="filter-title">
 
-                <label>To</label>
+        🔎 Search Filters
 
-                <input type="date" id="toDate">
+    </div>
 
-            </div>
+    <div class="filter-grid">
 
-            <div>
+        <div class="filter-group">
 
-                <label>Course</label>
+            <label>From Date</label>
 
-                <select id="course">
-
-                    <option value="">All Courses</option>
-
-                </select>
-
-            </div>
-
-            <div>
-
-                <label>Year</label>
-
-                <select id="year">
-
-                    <option value="">All Years</option>
-
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-
-                </select>
-
-            </div>
-
-            <div>
-
-                <label>Action</label>
-
-                <select id="action">
-
-                    <option value="">All</option>
-
-                    <option>TIME IN</option>
-
-                    <option>TIME OUT</option>
-
-                </select>
-
-            </div>
-
-            <div>
-
-                <label>Student</label>
-
-                <input
-                    id="searchStudent"
-                    placeholder="Search Student">
-
-            </div>
+            <input type="date" id="fromDate">
 
         </div>
 
-        <br>
+        <div class="filter-group">
 
-        <button id="searchBtn">
+            <label>To Date</label>
+
+            <input type="date" id="toDate">
+
+        </div>
+
+        <div class="filter-group">
+
+            <label>Course</label>
+
+            <select id="course">
+
+                <option value="">All Courses</option>
+
+            </select>
+
+        </div>
+
+        <div class="filter-group">
+
+            <label>Year Level</label>
+
+            <select id="year">
+
+                <option value="">All Years</option>
+
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+
+            </select>
+
+        </div>
+
+        <div class="filter-group">
+
+            <label>Attendance</label>
+
+            <select id="action">
+
+                <option value="">All</option>
+
+                <option>TIME IN</option>
+
+                <option>TIME OUT</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="search-row">
+
+        <input
+            id="searchStudent"
+            placeholder="🔍 Search Student ID or Student Name">
+
+    </div>
+
+    <div class="button-row">
+
+        <button id="searchBtn" class="btn-search">
 
             🔍 Search Records
 
         </button>
 
-        <button id="resetBtn">
+        <button id="resetBtn" class="btn-reset">
 
-            Reset
+            ↺ Reset Filters
 
         </button>
 
     </div>
 
-    <br>
+</div>
 
 <div id="welcomeScreen" class="welcome-screen">
 
