@@ -919,3 +919,178 @@ SUMMARY CARDS
     font-weight:bold;
 
 }
+
+/* ==============================
+ATTENDANCE HEADER
+============================== */
+
+.attendance-header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.attendance-header h1{
+
+    color:#1f4e79;
+
+    font-size:42px;
+
+    margin-bottom:8px;
+
+}
+
+.attendance-header p{
+
+    color:#666;
+
+    font-size:18px;
+
+}
+
+/* ==============================
+FILTER CARD
+============================== */
+
+.filter-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+.filter-title{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#1f4e79;
+
+    margin-bottom:25px;
+
+}
+
+.filter-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.filter-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.filter-group label{
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+    color:#444;
+
+}
+
+.filter-group input,
+.filter-group select{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+}
+
+.search-row{
+
+    margin-top:25px;
+
+}
+
+.search-row input{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    font-size:16px;
+
+}
+
+.button-row{
+
+    margin-top:25px;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.button-row button{
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.btn-search{
+
+    background:#1f4e79;
+
+    color:white;
+
+}
+
+.btn-search:hover{
+
+    background:#173a5a;
+
+}
+
+.btn-reset{
+
+    background:#f2f2f2;
+
+}
+
+.btn-reset:hover{
+
+    background:#dddddd;
+
+}
