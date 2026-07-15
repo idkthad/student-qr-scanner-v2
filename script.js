@@ -13,7 +13,7 @@ let qrScanner = null;
 const API =
 "https://script.google.com/macros/s/AKfycby9seIKNWXwU4guOG6VM6AIK9SJmIIrub5dYXyCIxL8F5xCEG0A5nzyj6Bq7zOqqQOu2Q/exec";
 
-let studentWindow = null;
+// let studentWindow = null;
 
 function searchStudent(studentID){
 
@@ -80,54 +80,39 @@ scanner.addEventListener("keydown", function(event){
 // =========================
 document
 .getElementById("startCamera")
-.addEventListener("click", function(){
+.addEventListener("click", function () {
 
     console.log("Start Camera button clicked");
 
-// Open the student display if it isn't already open
-if (!studentWindow || studentWindow.closed) {
+    // Stop Camera
+    if (qrScanner) {
 
-    studentWindow = window.open(
-        "student-display.html",
-        "StudentDisplay",
-        "width=900,height=850"
-    );
+        qrScanner.stop()
+        .then(function () {
 
-}
+            qrScanner.clear();
 
-if (qrScanner) {
+            qrScanner = null;
 
-    qrScanner.stop().then(function () {
+            document.getElementById("reader").style.display = "none";
 
-        qrScanner.clear();
+            startCameraBtn.textContent = "📷 Start Camera";
 
-        qrScanner = null;
+        })
+        .catch(console.error);
 
-        document.getElementById("reader").style.display = "none";
+        return;
 
-        startCameraBtn.textContent = "📷 Start Camera";
+    }
 
-        if(studentWindow){
-
-            studentWindow.postMessage({
-
-                type:"cameraOff"
-
-            },"*");
-
-        }
-
-    });
-
-    return;
-
-}
-
+    // Show Camera
     document.getElementById("reader").style.display = "block";
 
     qrScanner = new Html5Qrcode("reader");
 
-Html5Qrcode.getCameras().then(function(cameras){
+    Html5Qrcode.getCameras()
+
+    .then(function(cameras){
 
         console.log(cameras);
 
@@ -170,27 +155,19 @@ Html5Qrcode.getCameras().then(function(cameras){
 
     })
 
-.then(function(){
+    .then(function(){
 
-    console.log("Camera started successfully.");
+        console.log("Camera started successfully.");
 
-    startCameraBtn.textContent = "🛑 Stop Camera";
+        startCameraBtn.textContent = "🛑 Stop Camera";
 
-    if(studentWindow){
-
-        studentWindow.postMessage({
-
-            type:"waiting"
-
-        },"*");
-
-    }
-
-})
+    })
 
     .catch(function(err){
 
         console.error("Camera Error:", err);
+
+        alert("Unable to start camera.");
 
     });
 
