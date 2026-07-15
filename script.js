@@ -78,16 +78,9 @@ scanner.addEventListener("keydown", function(event){
 // =========================
 // Start Camera
 // =========================
-
 document
 .getElementById("startCamera")
-.addEventListener("click", function () {
-
-    console.log("Start Camera button clicked");
-
-    // ALL YOUR CAMERA CODE GOES HERE
-
-});
+.addEventListener("click", function(){
 
     console.log("Start Camera button clicked");
 
