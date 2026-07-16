@@ -1164,3 +1164,167 @@ FILTER CARD
     border-radius:12px;
 
 }
+
+/* ==========================================
+   STUDENT DISPLAY SCREEN
+========================================== */
+
+.student-display{
+
+    width:100vw;
+    height:100vh;
+
+    background:#f4f7fb;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:flex-start;
+
+    font-family:Arial,sans-serif;
+
+}
+
+.display-header{
+
+    width:100%;
+
+    background:#0b4f8a;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
+}
+
+.display-header h1{
+
+    margin:0;
+
+    font-size:34px;
+
+}
+
+.display-header h2{
+
+    margin-top:10px;
+
+    font-weight:normal;
+
+    font-size:20px;
+
+}
+
+.camera-placeholder{
+
+    margin-top:60px;
+
+    text-align:center;
+
+}
+
+.camera-icon{
+
+    font-size:120px;
+
+}
+
+.camera-placeholder h2{
+
+    color:#0b4f8a;
+
+    font-size:42px;
+
+}
+
+.camera-placeholder p{
+
+    color:#666;
+
+    font-size:24px;
+
+}
+
+#studentCard{
+
+    margin-top:40px;
+
+    background:white;
+
+    width:700px;
+
+    border-radius:25px;
+
+    padding:35px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+    text-align:center;
+
+}
+
+.display-photo{
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:20px;
+
+    object-fit:cover;
+
+    border:6px solid #0b4f8a;
+
+}
+
+#studentName{
+
+    margin-top:25px;
+
+    font-size:42px;
+
+    color:#0b4f8a;
+
+}
+
+#studentCourse{
+
+    font-size:28px;
+
+    color:#444;
+
+}
+
+#studentYear,
+#studentSection{
+
+    margin-top:10px;
+
+    font-size:22px;
+
+    color:#666;
+
+}
+
+.display-status{
+
+    margin-top:30px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    background:#28a745;
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:bold;
+
+}
