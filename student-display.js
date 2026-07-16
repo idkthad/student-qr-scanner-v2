@@ -1,7 +1,7 @@
 const API =
 "https://script.google.com/macros/s/AKfycby9seIKNWXwU4guOG6VM6AIK9SJmIIrub5dYXyCIxL8F5xCEG0A5nzyj6Bq7zOqqQOu2Q/exec";
 
-let lastTime = "";
+let lastTimestamp = "";
 
 function loadLatestStudent(){
 
@@ -14,11 +14,14 @@ function loadLatestStudent(){
         if(!student) return;
 
         // Prevent updating the same scan repeatedly
-        if(student.time == lastTime){
+        
+        if(student.timestamp == lastTimestamp){
 
             return;
 
         }
+
+lastTimestamp = student.timestamp;
 
         lastTime = student.time;
 
