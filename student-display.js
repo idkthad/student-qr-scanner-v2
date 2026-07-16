@@ -65,14 +65,6 @@ document.getElementById("studentStatus").style.background =
     student.status == "ACTIVE"
         ? "#28a745"
         : "#dc3545";
-    
-    setTimeout(function(){
-
-        document.getElementById("studentCard").style.display = "none";
-
-        document.getElementById("cameraPlaceholder").style.display = "block";
-
-    },5000);
 
 }
 
@@ -84,25 +76,39 @@ function loadSystem(){
 
     fetch(API + "?action=system")
 
-    .then(r => r.json())
+    .then(response => response.json())
 
     .then(system => {
 
+        // Camera OFF
         if(system.camera == "OFF"){
 
             document.getElementById("cameraPlaceholder").style.display = "block";
 
             document.getElementById("studentCard").style.display = "none";
 
+            document.querySelector("#cameraPlaceholder h2").innerHTML =
+                "📷 Camera is OFF";
+
+            document.querySelector("#cameraPlaceholder p").innerHTML =
+                "Please wait for the Security Guard.";
+
             return;
 
         }
 
+        // Camera ON but waiting
         if(system.display == "WAITING"){
 
             document.getElementById("cameraPlaceholder").style.display = "block";
 
             document.getElementById("studentCard").style.display = "none";
+
+            document.querySelector("#cameraPlaceholder h2").innerHTML =
+                "📷 Waiting for QR Scan";
+
+            document.querySelector("#cameraPlaceholder p").innerHTML =
+                "Please present your Student ID.";
 
         }
 
@@ -112,6 +118,6 @@ function loadSystem(){
 
 }
 
-setInterval(loadSystem,500);
+setInterval(loadSystem,1000);
 
 loadSystem();
