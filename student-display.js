@@ -112,6 +112,13 @@ function loadSystem(){
 
         }
 
+        fetch(
+            API +
+            "?action=updateSystem" +
+            "&camera=ON" +
+            "&display=WAITING"
+        );
+
     })
 
     .catch(console.error);
