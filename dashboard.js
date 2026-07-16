@@ -204,26 +204,28 @@ document.getElementById("prevPage").addEventListener("click", function(){
 
 });
 
+// Open Guard Scanner
 document
-.getElementById("openScanner")
+.getElementById("openGuard")
 .addEventListener("click", function(){
 
-    // Open the Guard Scanner
-    const guardWindow = window.open(
+    window.open(
         "index.html",
         "GuardScanner",
         "width=1200,height=900"
     );
 
-    // Wait a moment, then open the Student Display
-    setTimeout(function(){
+});
 
-        window.open(
-            "student-display.html",
-            "StudentDisplay",
-            "width=900,height=850"
-        );
+// Open Student Display
+document
+.getElementById("openStudent")
+.addEventListener("click", function(){
 
-    },500);
+    window.open(
+        "student-display.html",
+        "StudentDisplay",
+        "width=900,height=850"
+    );
 
 });
