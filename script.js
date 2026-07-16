@@ -239,6 +239,13 @@ function errorBeep() {
 
 function resetScanner(){
 
+    fetch(
+    API +
+    "?action=updateSystem" +
+    "&camera=ON" +
+    "&display=WAITING"
+);
+
     result.innerHTML = `
         <div class="waiting">
             <h2>📷 Ready for Next Student</h2>
@@ -255,6 +262,13 @@ function resetScanner(){
 }
 
 function showStudent(student) {
+
+    fetch(
+    API +
+    "?action=updateSystem" +
+    "&camera=ON" +
+    "&display=SHOW"
+);
 
   // Student not found
   if (!student) {
