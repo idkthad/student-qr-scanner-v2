@@ -208,10 +208,22 @@ document
 .getElementById("openScanner")
 .addEventListener("click", function(){
 
-    window.open(
+    // Open the Guard Scanner
+    const guardWindow = window.open(
         "index.html",
-        "ScannerWindow",
-        "width=1100,height=900"
+        "GuardScanner",
+        "width=1200,height=900"
     );
+
+    // Wait a moment, then open the Student Display
+    setTimeout(function(){
+
+        window.open(
+            "student-display.html",
+            "StudentDisplay",
+            "width=900,height=850"
+        );
+
+    },500);
 
 });
