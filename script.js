@@ -15,6 +15,18 @@ const API =
 
 // let studentWindow = null;
 
+function updateSystem(camera, display){
+
+    fetch(
+        API +
+        "?action=updateSystem" +
+        "&camera=" + encodeURIComponent(camera) +
+        "&display=" + encodeURIComponent(display)
+    )
+    .catch(console.error);
+
+}
+
 function searchStudent(studentID){
 
     studentID = studentID.trim();
@@ -98,6 +110,8 @@ document
 
             startCameraBtn.textContent = "📷 Start Camera";
 
+            updateSystem("OFF","WAITING");
+
         })
         .catch(console.error);
 
@@ -160,6 +174,8 @@ document
         console.log("Camera started successfully.");
 
         startCameraBtn.textContent = "🛑 Stop Camera";
+
+        updateSystem("ON","WAITING");
 
     })
 
@@ -233,6 +249,8 @@ function resetScanner(){
     scanner.value = "";
 
     scanner.focus();
+
+    updateSystem("ON","WAITING");
 
 }
 
@@ -389,6 +407,8 @@ Continue
 </div>
 
 `;
+
+updateSystem("ON","SHOW");
 
 successBeep();
 
