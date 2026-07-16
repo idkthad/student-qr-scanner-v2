@@ -17,23 +17,42 @@
 
     <div class="display-header">
 
-        <h1>Balangiga National Agricultural School</h1>
+        <img src="BNAS Logo.png" class="display-logo">
 
-        <h2>Student QR Access Management System</h2>
+        <div>
 
-    </div>
+            <h1>Balangiga National Agricultural School</h1>
 
-    <div id="cameraPlaceholder" class="camera-placeholder">
+            <h2>Student QR Access Management System</h2>
 
-        <div class="camera-icon">📷</div>
-
-        <h2>Waiting for QR Scan</h2>
-
-        <p>Please present your Student ID.</p>
+        </div>
 
     </div>
 
-    <div id="studentCard" style="display:none;">
+    <!-- Waiting Screen -->
+
+    <div id="cameraPlaceholder" class="waiting-card">
+
+        <div class="camera-icon">
+
+            📷
+
+        </div>
+
+        <h2>READY TO SCAN</h2>
+
+        <p>
+
+            Please present your Student ID<br>
+            to the Security Personnel.
+
+        </p>
+
+    </div>
+
+    <!-- Student Card -->
+
+    <div id="studentCard" class="student-card" style="display:none;">
 
         <img
             id="studentPhoto"
@@ -44,9 +63,13 @@
 
         <h2 id="studentCourse"></h2>
 
-        <h3 id="studentYear"></h3>
+        <div class="student-info">
 
-        <h3 id="studentSection"></h3>
+            <div id="studentYear"></div>
+
+            <div id="studentSection"></div>
+
+        </div>
 
         <div
             id="studentStatus"
@@ -56,10 +79,12 @@
 
     </div>
 
+    <div class="display-footer">
+
+        TESDA Accredited Institution
+
+    </div>
+
 </div>
-
-<script src="student-display.js"></script>
-
-</body>
-
+    
 </html>
