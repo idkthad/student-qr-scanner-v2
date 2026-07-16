@@ -15,36 +15,42 @@
 
 <div class="student-display">
 
-    <div id="cameraPlaceholder">
+    <div class="display-header">
 
-        <h2>📷 Camera is OFF</h2>
+        <h1>Balangiga National Agricultural School</h1>
 
-        <p>Please wait for the security guard.</p>
+        <h2>Student QR Access Management System</h2>
 
     </div>
 
-    <div id="studentResult">
+    <div id="cameraPlaceholder" class="camera-placeholder">
+
+        <div class="camera-icon">📷</div>
+
+        <h2>Waiting for QR Scan</h2>
+
+        <p>Please present your Student ID.</p>
+
+    </div>
+
+    <div id="studentCard" style="display:none;">
 
         <img
             id="studentPhoto"
             src="No Profile.png"
             class="display-photo">
 
-        <h1 id="studentName">
+        <h1 id="studentName"></h1>
 
-            READY TO SCAN
+        <h2 id="studentCourse"></h2>
 
-        </h1>
+        <h3 id="studentYear"></h3>
 
-        <h2 id="studentCourse">
+        <h3 id="studentSection"></h3>
 
-            Waiting for Student...
-
-        </h2>
-
-        <div id="studentStatus" class="display-status">
-
-            Please present your QR Code
+        <div
+            id="studentStatus"
+            class="display-status">
 
         </div>
 
