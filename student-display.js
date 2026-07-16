@@ -79,3 +79,39 @@ document.getElementById("studentStatus").style.background =
 setInterval(loadLatestStudent,1000);
 
 loadLatestStudent();
+
+function loadSystem(){
+
+    fetch(API + "?action=system")
+
+    .then(r => r.json())
+
+    .then(system => {
+
+        if(system.camera == "OFF"){
+
+            document.getElementById("cameraPlaceholder").style.display = "block";
+
+            document.getElementById("studentCard").style.display = "none";
+
+            return;
+
+        }
+
+        if(system.display == "WAITING"){
+
+            document.getElementById("cameraPlaceholder").style.display = "block";
+
+            document.getElementById("studentCard").style.display = "none";
+
+        }
+
+    })
+
+    .catch(console.error);
+
+}
+
+setInterval(loadSystem,500);
+
+loadSystem();
