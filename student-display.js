@@ -53,9 +53,16 @@ function showStudent(student){
     document.getElementById("studentSection").innerHTML =
         student.section;
 
-    document.getElementById("studentStatus").innerHTML =
-        student.action;
+document.getElementById("studentStatus").innerHTML =
+    student.status == "ACTIVE"
+        ? "✅ ACCESS GRANTED"
+        : "❌ ACCESS DENIED";
 
+document.getElementById("studentStatus").style.background =
+    student.status == "ACTIVE"
+        ? "#28a745"
+        : "#dc3545";
+    
     setTimeout(function(){
 
         document.getElementById("studentCard").style.display = "none";
